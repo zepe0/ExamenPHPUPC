@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump(($_POST));
+
     if (isset($_POST['likes'])) {
         foreach ($_SESSION['cards'] as &$card) {
             if ($card->titulo === $_POST["titulo"]) {
@@ -21,17 +21,18 @@ echo "<section>
 if (isset($_SESSION["cards"]) && count($_SESSION["cards"]) != 0) {
     foreach ($_SESSION["cards"] as $card) {
         echo "<li class='card'>
-                <img>
+             <div class='cardUser'>
                 <h2>" . $card->titulo . "</h2>
                 <img src='img/" . $card->img . "' class='imgpost'>
-                <p >" . $card->des . "   </p>
-                <div>
+            </div>
+                <p class='m-20'>" . $card->des . "   </p>
+                <div class='m-20'>
                 <form method='POST'><button><i class='fa-regular fa-heart '> </i> </button>
                 <span name='likes'> " . $card->likes . "</span>
                 <input type='hidden' name='titulo' value='" . $card->titulo . "'>
                 </form>
                 </div>
-                <p>" . $card->comentario . "</p>
+                <p class='m-20'>" . $card->comentario . "</p>
             </li>";
     }
 } else {

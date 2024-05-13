@@ -1,18 +1,28 @@
 <header>
-    <img src="fakelogo.jpg">
+    <img src="fakelogo.jpeg">
     <?php
+    if (isset($_SESSION))
 
-    $_SESSION["login"] === 1 ? print "
-    <div> <button class='btn-new'><a href='home.php'>Inicio</button></a>
-    <a href='newpost.php'><button class='btn-new'>Añadir nuevo post</button></a></div>
-    <a href='amics.php'><button class='btn-new'>Amics</button></a></div>
-    <div class='headName'>" . $_SESSION["user"] . " 
-        <form action='logout.php' method='POST'> 
-        <button name='logout'>Logout</button></form>
+
+        $_SESSION["login"] === 1 ? print "
+    <div> 
+        <button class='btn-new'>    
+        <a href='home.php'>Inicio</a>
+        </button>
+       
+        
+    
+        <button class='btn-new'><a href='amics.php'>Amics</a></button>
+    </div>
+    <div class='headName'>
+    <form action='logout.php' method='POST'> 
+    " . $_SESSION["user"] . " 
+         <button name='logout'>Logout</button>
+        </form>
     </div> 
     " : ""
 
-        ?>
+            ?>
 
 
-</header>
+    </header>

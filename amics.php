@@ -14,8 +14,7 @@
     session_start();
     include_once ("header.php")
         ?>
-    <main>
-
+    <main class="colum">
         <?php include_once ("listfrindes.php") ?>
     </main>
     <?php include_once ("footer.php") ?>

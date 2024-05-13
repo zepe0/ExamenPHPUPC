@@ -17,10 +17,17 @@
     if ((!isset($_COOKIE["user"]) && !isset($_COOKIE["pas"])) || $_SESSION["login"] === 0)
         header("Location:index.php");
     ?>
-    <a href="newpost.php"><button class="btn-new">Añadir nuevo post</button></a>
-    <div>
+    <main>
+        <div>
+            <?php include_once ("sugerencias.php") ?>
+        </div>
+
         <?php include_once ("listpost.php") ?>
-    </div>
+
+        <div>
+            <?php include_once ("misamigos.php") ?>
+        </div>
+    </main>
 
     <?php include_once ("footer.php") ?>
 </body>

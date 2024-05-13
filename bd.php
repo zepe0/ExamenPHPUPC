@@ -2,7 +2,26 @@
 
 session_start();
 $_SESSION["fridens"] = array(
-
+    array(
+        'nom' => 'Toni',
+        'cognom' => 'Oller',
+        'img' => 'toni.jpeg'
+    ),
+    array(
+        'nom' => 'Ikram',
+        'cognom' => 'Bghiel',
+        'img' => 'ikram.jpeg'
+    ),
+    array(
+        'nom' => 'Neus',
+        'cognom' => 'Vidal',
+        'img' => 'neus.jpeg'
+    ),
+    array(
+        'nom' => 'Juan',
+        'cognom' => 'Vidal',
+        'img' => 'juan.jpeg'
+    ),
 
     array(
         'nom' => 'PePito',
@@ -34,6 +53,7 @@ $_SESSION["fridens"] = array(
         'cognom' => 'Perez',
         'img' => 'perez.jpg'
     ),
+
 );
 $_SESSION["fo"] = 0;
 $_SESSION["login"] = 0;
@@ -52,18 +72,22 @@ $_SESSION["USER"] =
             'username' => 'juan',
             'pass' => '12345',
             'amics' => [
-                ['nom' => 'Toni', 'cognom' => 'Oller', 'img' => 'b'],
-                ['nom' => 'Ikram', 'cognom' => 'Bghiel', 'img' => 'a'],
-                ['nom' => 'Neus', 'cognom' => 'Vidal', 'img' => 'c']
+                ['nom' => 'Toni', 'cognom' => 'Oller', 'img' => 'toni.jpeg'],
+                ['nom' => 'Ikram', 'cognom' => 'Bghiel', 'img' => 'ikram.jpeg'],
+                ['nom' => 'Neus', 'cognom' => 'Vidal', 'img' => 'neus.jpeg'],
+
             ]
         ],
         [
             'username' => 'Ikram',
             'pass' => '12345',
             'amics' => [
+
+                ['nom' => 'Toni', 'cognom' => 'Oller', 'img' => 'toni.jpeg'],
+                ['nom' => 'Juan', 'cognom' => 'Vidal', 'img' => 'juan.jpeg'],
+                ['nom' => 'Neus', 'cognom' => 'Vidal', 'img' => 'neus.jpeg'],
                 ['nom' => 'Gepeto', 'cognom' => 'Perez', 'img' => 'gepeto.png'],
-                ['nom' => 'Perez', 'cognom' => 'Perez', 'img' => 'perez.jpg'],
-                ['nom' => 'Toni', 'cognom' => 'Oller', 'img' => 'a']
+                ['nom' => 'Perez', 'cognom' => 'Perez', 'img' => 'perez.jpg']
             ]
         ]
     ];
