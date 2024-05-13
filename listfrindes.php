@@ -73,31 +73,32 @@
 
         <div>
             <h3>Sugerencias</h3>
-
             <?php
             if (isset($_SESSION["USER"]) && isset($_SESSION["fridens"])) {
+                $userAmigos = [];
                 foreach ($_SESSION["USER"] as $usuario) {
-                    foreach ($usuario['amics'] as $amigo) {
-                        $nombre_amigo = strtolower($amigo['nom']);
-                        $encontrado = false;
-                        foreach ($_SESSION["fridens"] as $friden) {
+                    if ($usuario['username'] === $_SESSION['user']) {
+                        $userAmigos = array_map(function ($amigo) {
+                            return strtolower($amigo['nom']);
+                        }, $usuario['amics']);
+                        break;
+                    }
+                }
 
-                            if (strtolower($friden['nom']) === $nombre_amigo) {
-                                $encontrado = true;
-                                break;
-                            }
-                        }
-                        if (!$encontrado) {
-                            echo "<li class='cardfriden'>
-                    <img src='img/" . $amigo['img'] . "' class='imgfriden'> 
-                    <h2>" . $amigo['nom'] . "</h2>
+                foreach ($_SESSION["fridens"] as $friden) {
+                    $nombre_friden = strtolower($friden['nom']);
+
+                    if (!in_array($nombre_friden, $userAmigos)) {
+                        echo "<li class='cardfriden'>
+                    <img src='img/" . $friden['img'] . "' class='imgfriden'> 
+                    <h2>" . $friden['nom'] . "</h2>
                 </li>";
-                        }
                     }
                 }
             }
             ?>
         </div>
+
     </div>
 
 </div>

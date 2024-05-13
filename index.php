@@ -48,23 +48,19 @@ if (isset($_REQUEST["User"])) {
     }
 
     if (isset($_POST["Pass"]) && $_POST["Pass"] != "") {
-        foreach ($_SESSION["USER"] as $usuario)
-            if ($_POST["Pass"] === $usuario['pass']) {
-                $_SESSION["user"] = $usuario['username'];
-                $pas = true;
-
-            } else {
-                print ("<div class='flexcenter'><p>Contraseña Incorrecta</p></div>");
-
+        foreach ($_SESSION["USER"] as $usuario) {
+            // Verificar si el nombre de usuario coincide
+            if (strcasecmp($usuario['username'], $_POST["User"]) === 0) {
+                // Verificar si la contraseña coincide
+                if ($_POST["Pass"] === $usuario['pass']) {
+                    $_SESSION["user"] = $usuario['username'];
+                    $pas = true;
+                } else {
+                    print ("<div class='flexcenter'><p>Contraseña Incorrecta</p></div>");
+                }
             }
-
-        $options = [
-            'cost' => 12,
-        ];
-        $hashed_password = password_hash($_POST['Pass'], PASSWORD_BCRYPT, $options);
-
+        }
     } else {
-
         print ("<div class='flexcenter'><p>Inserta una Contraseña</p></div>");
     }
     if (isset($_POST["Rec"]) && $_POST["Rec"] === "on") {
