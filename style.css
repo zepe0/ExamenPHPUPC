@@ -10,6 +10,8 @@ body {
     rgb(93, 121, 153) 68%,
     rgb(158, 130, 151) 87%
   );
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 footer {
   border: 1px solid slategray;
@@ -21,7 +23,7 @@ footer {
 }
 header {
   display: flex;
-  height: 5%;
+  height: 8%;
   margin-bottom: 10px;
   flex-direction: row;
   justify-content: space-between;
