@@ -57,7 +57,7 @@ $_SESSION["fridens"] = array(
 );
 $_SESSION["fo"] = 0;
 $_SESSION["login"] = 0;
-$_SESSION["user"] = "admin";
+
 $_SESSION["pass"] = "admin";
 $_SESSION["cards"] = array(
     (object) array('titulo' => 'Sulley', 'img' => 'sulley.jpeg', "likes" => 3, 'des' => "James P. Sullivan es miembro de una estirpe familiar bien conocida por sus dotes para los sustos. Desde que Mike se encargó de bajar sus aires de grandeza en la universidad, Sulley pasó a ser un monstruo atento, adorable y bastante bonachón. Quizás por eso cae rendido ante la tierna Boo, con la que establecerá una de las amistades más recordadas del cine.", 'comentario' => "Sulley: 'Mike, ¿crees que Boo nos extrañará cuando volvamos a Monstruópolis?'"),

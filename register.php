@@ -27,6 +27,7 @@
                 $error = true;
             } else {
                 $errorUser = false;
+
             }
         }
         ;
@@ -87,9 +88,10 @@
         }
 
         ;
-        if ($error === false) {
+        if ($errorUser == null /* && $errorPass != null && $errorPassdos != null */ && $errorEmail == null) {
             header("Location:home.php");
             $_SESSION["login"] = 1;
+            $_SESSION['user'] = $_POST["User"];
         }
 
 
